@@ -2,18 +2,20 @@
     <div>
         <header-vue></header-vue>
         <swiper-vue></swiper-vue>
-        test
+        <icons-vue></icons-vue>
     </div>
 </template>
 
 <script>
 import HeaderVue from './components/Header.vue';
 import SwiperVue from './components/Swiper.vue';
+import IconsVue from './components/Icons.vue';
 export default {
     name: 'Home',
     components: {
     HeaderVue,
-    SwiperVue
+    SwiperVue,
+    IconsVue
 }
 }
 </script>
