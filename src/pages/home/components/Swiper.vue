@@ -41,8 +41,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-    // .wrapper>>.swiper-pagination-bullet-active
-    //     background #fff
+    // 由于scoped无法修改第三方组件的样式，所以需要穿透
+    .wrapper>>>.swiper-pagination-bullet-active.swiper-pagination-bullet
+        background red
     .wrapper
         width:100%
         height:0
