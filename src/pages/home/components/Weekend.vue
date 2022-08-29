@@ -22,36 +22,39 @@
 <script>
 export default {
     name: 'Weekend',
+    props:{
+        weekendList:Array
+    },
     data() {
         return {
-            weekendList: [
-                {
-                    id: '0001',
-                    imgSrc: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-                    title: '北京温泉排行榜',
-                    desc: '细数北京温泉，温暖你的冬天'
-                }, {
-                    id: '0002',
-                    imgSrc: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-                    title: '北京温泉排行榜',
-                    desc: '细数北京温泉，温暖你的冬天'
-                }, {
-                    id: '0003',
-                    imgSrc: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-                    title: '北京温泉排行榜',
-                    desc: '细数北京温泉，温暖你的冬天'
-                }, {
-                    id: '0004',
-                    imgSrc: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-                    title: '北京温泉排行榜',
-                    desc: '细数北京温泉，温暖你的冬天'
-                }, {
-                    id: '0005',
-                    imgSrc: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-                    title: '北京温泉排行榜',
-                    desc: '细数北京温泉，温暖你的冬天'
-                },
-            ]
+            // weekendList: [
+            //     {
+            //         id: '0001',
+            //         imgSrc: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
+            //         title: '北京温泉排行榜',
+            //         desc: '细数北京温泉，温暖你的冬天'
+            //     }, {
+            //         id: '0002',
+            //         imgSrc: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
+            //         title: '北京温泉排行榜',
+            //         desc: '细数北京温泉，温暖你的冬天'
+            //     }, {
+            //         id: '0003',
+            //         imgSrc: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
+            //         title: '北京温泉排行榜',
+            //         desc: '细数北京温泉，温暖你的冬天'
+            //     }, {
+            //         id: '0004',
+            //         imgSrc: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
+            //         title: '北京温泉排行榜',
+            //         desc: '细数北京温泉，温暖你的冬天'
+            //     }, {
+            //         id: '0005',
+            //         imgSrc: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
+            //         title: '北京温泉排行榜',
+            //         desc: '细数北京温泉，温暖你的冬天'
+            //     },
+            // ]
         }
     }
 }

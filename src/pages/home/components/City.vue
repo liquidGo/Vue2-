@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ul class="citys" v-for="item of cityList" :key="item.id">
+        <ul class="citys" v-for="item of recommendList" :key="item.id">
             <li class="item border-bottom">
                 <img :src="item.imgSrc"
                     class="item-img" alt="">
@@ -17,40 +17,43 @@
 <script>
 export default {
     name: 'City',
+    props:{
+        recommendList:Array
+    },
     data() {
         return {
-            cityList: [
-                {
-                    id: '0001',
-                    imgSrc: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-                    title: '故宫',
-                    desc: '东方宫殿建筑代表，世界宫殿建筑典范'
-                },
-                {
-                    id: '0002',
-                    imgSrc: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-                    title: '故宫',
-                    desc: '东方宫殿建筑代表，世界宫殿建筑典范'
-                },
-                {
-                    id: '0003',
-                    imgSrc: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-                    title: '故宫',
-                    desc: '东方宫殿建筑代表，世界宫殿建筑典范'
-                },
-                {
-                    id: '0004',
-                    imgSrc: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-                    title: '故宫',
-                    desc: '东方宫殿建筑代表，世界宫殿建筑典范'
-                },
-                {
-                    id: '0005',
-                    imgSrc: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-                    title: '故宫',
-                    desc: '东方宫殿建筑代表，世界宫殿建筑典范'
-                }
-            ]
+            // cityList: [
+            //     {
+            //         id: '0001',
+            //         imgSrc: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
+            //         title: '故宫',
+            //         desc: '东方宫殿建筑代表，世界宫殿建筑典范'
+            //     },
+            //     {
+            //         id: '0002',
+            //         imgSrc: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
+            //         title: '故宫',
+            //         desc: '东方宫殿建筑代表，世界宫殿建筑典范'
+            //     },
+            //     {
+            //         id: '0003',
+            //         imgSrc: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
+            //         title: '故宫',
+            //         desc: '东方宫殿建筑代表，世界宫殿建筑典范'
+            //     },
+            //     {
+            //         id: '0004',
+            //         imgSrc: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
+            //         title: '故宫',
+            //         desc: '东方宫殿建筑代表，世界宫殿建筑典范'
+            //     },
+            //     {
+            //         id: '0005',
+            //         imgSrc: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
+            //         title: '故宫',
+            //         desc: '东方宫殿建筑代表，世界宫殿建筑典范'
+            //     }
+            // ]
         }
     }
 }

@@ -12,6 +12,9 @@
 <script>
 export default {
     name: 'HomeSwiper',
+    props:{
+        swiperList:Array
+    },
     data() {
         return {
             swiperOptions: {
@@ -20,21 +23,21 @@ export default {
                 },
                 loop: true
             },
-            swiperList: [
-                {
-                    id: '1',
-                    imgSrc: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg'
-                },
-                {
-                    id: '2',
-                    imgSrc: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/fd16ccffb2e2376ff370bda3bebebd71.jpg'
-                },
-                {
-                    id: '3',
-                    imgSrc: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg'
-                },
+            // swiperList: [
+            //     {
+            //         id: '1',
+            //         imgSrc: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg'
+            //     },
+            //     {
+            //         id: '2',
+            //         imgSrc: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/fd16ccffb2e2376ff370bda3bebebd71.jpg'
+            //     },
+            //     {
+            //         id: '3',
+            //         imgSrc: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg'
+            //     },
 
-            ]
+            // ]
         }
     },
 }
@@ -53,6 +56,6 @@ export default {
         .swiper-img
             width:100%
         .swiper-pagination
-            top 45%
+            top 80%
             bottom 100%
 </style>

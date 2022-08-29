@@ -11,61 +11,67 @@
             </swiper-slide>
 
         </swiper>
+
     </div>
 </template>
 
 <script>
+
 export default {
     name: 'Icons',
+    props: {
+        iconList: Array
+    },
     data() {
         return {
-            iconList: [
-                {
-                    id: '0001',
-                    imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
-                    desc: '景点门票'
-                },
-                {
-                    id: '0002',
-                    imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
-                    desc: '滑雪季'
-                },
-                {
-                    id: '0003',
-                    imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
-                    desc: '泡温泉'
-                },
-                {
-                    id: '0004',
-                    imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
-                    desc: '动物园'
-                },
-                {
-                    id: '0005',
-                    imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
-                    desc: '游乐园'
-                },
-                {
-                    id: '0006',
-                    imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
-                    desc: '必游榜单'
-                },
-                {
-                    id: '0007',
-                    imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
-                    desc: '演出'
-                },
-                {
-                    id: '0008',
-                    imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
-                    desc: '城市观光'
-                },
-                {
-                    id: '0009',
-                    imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
-                    desc: '一日游'
-                }
-            ]
+
+            // iconList: [
+            //     {
+            //         id: '0001',
+            //         imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
+            //         desc: '景点门票'
+            //     },
+            //     {
+            //         id: '0002',
+            //         imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
+            //         desc: '滑雪季'
+            //     },
+            //     {
+            //         id: '0003',
+            //         imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
+            //         desc: '泡温泉'
+            //     },
+            //     {
+            //         id: '0004',
+            //         imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
+            //         desc: '动物园'
+            //     },
+            //     {
+            //         id: '0005',
+            //         imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
+            //         desc: '游乐园'
+            //     },
+            //     {
+            //         id: '0006',
+            //         imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
+            //         desc: '必游榜单'
+            //     },
+            //     {
+            //         id: '0007',
+            //         imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
+            //         desc: '演出'
+            //     },
+            //     {
+            //         id: '0008',
+            //         imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
+            //         desc: '城市观光'
+            //     },
+            //     {
+            //         id: '0009',
+            //         imgSrc: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
+            //         desc: '一日游'
+            //     }
+            // ]
         }
     },
     computed: {
