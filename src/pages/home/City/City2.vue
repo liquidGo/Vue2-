@@ -2,13 +2,16 @@
     <div>
         <header-city></header-city>
         <search-vue></search-vue>
-        123123
+        <list-city></list-city>
+        <abc-de></abc-de>
     </div>
 </template>
 
 <script>
 import HeaderCity from './components/Header.vue'
 import SearchVue from './components/Search.vue';
+import ListCity from './components/List.vue'
+import AbcDe from './components/Aiphbet.vue';
 export default {
     name: 'City',
     mounted() {
@@ -16,7 +19,9 @@ export default {
     },
     components: {
         HeaderCity,
-        SearchVue
+        SearchVue,
+        ListCity,
+        AbcDe
     }
 }
 </script>
