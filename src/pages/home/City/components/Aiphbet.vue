@@ -1,11 +1,15 @@
 <template>
     <div>
         <ul class="list">
-            <li v-for="(value, key) in cities" :key="key" class="item">{{  key  }}</li>
-            <!-- <li class="item">B</li>
-            <li class="item">C</li>
-            <li class="item">D</li>
-            <li class="item">E</li> -->
+            <li 
+            @touchstart="handleTouchStart" 
+            @touchmove="handleTouchMove" 
+            @touchend="handleTouchEnd"
+            v-for="(value) in letters" 
+            :key="value" 
+            class="item" 
+            :ref="value"
+            @click="handleLetterClick">{{  value  }}</li>
         </ul>
     </div>
 
@@ -16,6 +20,18 @@ export default {
     name: 'AiphbetCity',
     data() {
         return {
+            touchStatus: false,
+            startY: 0,
+            timer: null
+        }
+    },
+    computed:{
+        letters(){
+            const letters = [];
+            for (let i in this.cities){
+                letters.push(i);
+            }
+            return letters
         }
     },
     props: {
@@ -23,6 +39,24 @@ export default {
     },
     mounted() {
         console.log(this.cities, 'aaaaaaa');
+    },
+    methods: {
+        handleLetterClick(letter) {
+            this.$emit('change', letter.target.innerText)
+        },
+        handleTouchStart() {
+            this.touchStatus = true;
+        },
+        handleTouchMove(e) {
+            if (this.touchStatus) {
+                // const startY = this.$refs['A'][0].offsetTop
+                const touchY = e.touches[0].clientY - 79;
+                console.log(touchY, 'ttttt');
+            }
+        },
+        handleTouchEnd() {
+            this.touchStatus = false;
+        }
     }
 }
 </script>

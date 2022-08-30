@@ -61,6 +61,4 @@ export default {
             .arrow-icon
                 margin-left -.04rem
                 font-size .2rem
-
-
 </style>

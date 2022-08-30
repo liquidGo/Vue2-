@@ -17,10 +17,10 @@
                     </div>
                 </div>
             </div>
-            <div class="area" v-for="(item, key) in cities" :key="item.id">
+            <div class="area" v-for="(item, key) in cities" :key="item.id" :ref="key">
                 <div class="title">{{  key  }}</div>
                 <div class="item-list" v-for="value in cities[key]" :key="value.id">
-                    <div  v-on:click="itemFn(value)"  class="item">{{  value.name  }}</div>
+                    <div v-on:click="itemFn(value)" class="item">{{  value.name  }}</div>
                 </div>
             </div>
         </div>
@@ -33,16 +33,13 @@ export default {
     name: 'CityList',
     props: {
         hotCitys: Array,
-        cities: Object
+        cities: Object,
+        letter: String
     },
     mounted() {
         setTimeout(() => {
             this.scroll = new Bscroll(this.$refs.wrapper)
         }, 20);
-        // console.log('hotCitys','ttt');
-        this.$nextTick(() => {
-            console.log(this.cities, '11');
-        })
     },
     data() {
         return {
@@ -53,6 +50,15 @@ export default {
         itemFn(value) {
             console.log('cli', value);
             this.city = value.name
+        }
+    },
+    watch: {
+        letter() {
+            if (this.letter) {
+                const element = this.$refs[this.letter]
+                this.scroll.scrollToElement(element[0])
+                // console.log(element);
+            }
         }
     }
 }

@@ -2,8 +2,8 @@
     <div>
         <header-city></header-city>
         <search-vue></search-vue>
-        <list-city :hotCitys="hotCitys" :cities="cities"></list-city>
-        <abc-de :cities="cities"></abc-de>
+        <list-city :letter="letter" :hotCitys="hotCitys" :cities="cities"></list-city>
+        <abc-de @change="handlek" :cities="cities"></abc-de>
     </div>
 </template>
 
@@ -21,7 +21,8 @@ export default {
     data() {
         return {
             cities: {},
-            hotCitys: []
+            hotCitys: [],
+            letter: ''
         }
     },
     methods: {
@@ -35,6 +36,10 @@ export default {
             this.cities = res.data.data.cities;
             this.hotCitys = res.data.data.hotCities
             console.log(this.hotCitys, 'cccc');
+        },
+        handlek(letter) {
+            // console.log(letter,'letter');
+            this.letter = letter
         }
     },
     components: {
@@ -45,6 +50,5 @@ export default {
     }
 }
 </script>
-
 <style lang="stylus" scoped>
 </style>
