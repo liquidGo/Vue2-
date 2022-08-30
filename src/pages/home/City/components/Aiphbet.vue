@@ -1,16 +1,29 @@
 <template>
-    <ul class="list">
-        <li class="item">A</li>
-        <li class="item">B</li>
-        <li class="item">C</li>
-        <li class="item">D</li>
-        <li class="item">E</li>
-    </ul>
+    <div>
+        <ul class="list">
+            <li v-for="(value, key) in cities" :key="key" class="item">{{  key  }}</li>
+            <li class="item">B</li>
+            <li class="item">C</li>
+            <li class="item">D</li>
+            <li class="item">E</li>
+        </ul>
+    </div>
+
 </template>
 
 <script>
 export default {
-    name: 'AiphbetCity'
+    name: 'AiphbetCity',
+    data() {
+        return {
+        }
+    },
+    props: {
+        cities: Object
+    },
+    mounted() {
+        console.log(this.cities, 'aaaaaaa');
+    }
 }
 </script>
 
