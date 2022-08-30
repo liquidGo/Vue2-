@@ -2,10 +2,10 @@
     <div>
         <ul class="list">
             <li v-for="(value, key) in cities" :key="key" class="item">{{  key  }}</li>
-            <li class="item">B</li>
+            <!-- <li class="item">B</li>
             <li class="item">C</li>
             <li class="item">D</li>
-            <li class="item">E</li>
+            <li class="item">E</li> -->
         </ul>
     </div>
 
