@@ -54,6 +54,7 @@ export default {
             if (this.letter) {
                 const element = this.$refs[this.letter][0]
                 this.scroll.scrollToElement(element)
+                console.log(element,'element');
             }
         }
     },
@@ -67,8 +68,12 @@ export default {
             console.log('cli', value);
             this.city = value.name
         }
+<<<<<<< HEAD
     }
    
+=======
+    },
+>>>>>>> city-search-logic
 }
 </script>
 
