@@ -23,6 +23,18 @@ export default {
             touchStatus: false,
             startY: 0,
             timer: null
+<<<<<<< HEAD
+        }
+    },
+    computed:{
+        letters(){
+            const letters = [];
+            for (let i in this.cities){
+                letters.push(i);
+            }
+            return letters
+=======
+>>>>>>> city-search-logic
         }
     },
     computed:{
@@ -34,24 +46,53 @@ export default {
             return letters
         }
     },
+    watch:{
+
+    },
     props: {
         cities: Object
     },
     mounted() {
+<<<<<<< HEAD
         console.log(this.cities, 'aaaaaaa');
     },
     methods: {
         handleLetterClick(letter) {
+=======
+        console.log(this.letters, 'aaaaaaa');
+    },
+    updated(){
+        this.startY= this.$refs['A'][0].offsetTop
+    },
+    methods: {
+        handleLetterClick(letter) {
+            console.log(letter.target.innerText,'letter');
+>>>>>>> city-search-logic
             this.$emit('change', letter.target.innerText)
         },
         handleTouchStart() {
             this.touchStatus = true;
         },
+<<<<<<< HEAD
         handleTouchMove(e) {
             if (this.touchStatus) {
                 // const startY = this.$refs['A'][0].offsetTop
                 const touchY = e.touches[0].clientY - 79;
                 console.log(touchY, 'ttttt');
+=======
+        handleTouchMove(e){
+            if(this.touchStatus){
+                if (this.timer){
+                    clearTimeout(this.timer)
+                }
+                this.timer = setTimeout(() => {
+                    const touchY = e.touches[0].clientY - 79
+                    const index = Math.floor((touchY-this.startY)/20)
+                    if(index >= 0 && index < this.letters.length){
+                        this.$emit('change',this.letters[index]);
+                    }
+                }, 20);
+>>>>>>> city-search-logic
             }
         },
         handleTouchEnd() {

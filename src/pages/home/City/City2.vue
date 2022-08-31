@@ -1,9 +1,11 @@
 <template>
     <div>
         <header-city></header-city>
-        <search-vue></search-vue>
-        <list-city :letter="letter" :hotCitys="hotCitys" :cities="cities"></list-city>
-        <abc-de @change="handlek" :cities="cities"></abc-de>
+
+        <search-vue :cities="cities"></search-vue>
+        <list-city :hotCitys="hotCitys" :letter="letter" :cities="cities"></list-city>
+        <abc-de @change="handleLetterChange" :cities="cities"></abc-de>
+
     </div>
 </template>
 
@@ -20,6 +22,7 @@ export default {
     },
     data() {
         return {
+            letter: '',
             cities: {},
             hotCitys: [],
             letter: ''
@@ -37,9 +40,11 @@ export default {
             this.hotCitys = res.data.data.hotCities
             console.log(this.hotCitys, 'cccc');
         },
-        handlek(letter) {
-            // console.log(letter,'letter');
-            this.letter = letter
+
+        handleLetterChange(letter) {
+            this.letter = letter;
+            console.log(letter,'lllll');
+
         }
     },
     components: {
