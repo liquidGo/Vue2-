@@ -54,6 +54,7 @@ export default {
             if (this.letter) {
                 const element = this.$refs[this.letter][0]
                 this.scroll.scrollToElement(element)
+                console.log(element,'element');
             }
         }
     },
@@ -68,15 +69,6 @@ export default {
             this.city = value.name
         }
     },
-    watch: {
-        letter() {
-            if (this.letter) {
-                const element = this.$refs[this.letter]
-                this.scroll.scrollToElement(element[0])
-                // console.log(element);
-            }
-        }
-    }
 }
 </script>
 

@@ -25,7 +25,6 @@ export default {
             letter: '',
             cities: {},
             hotCitys: [],
-            letter: ''
         }
     },
     methods: {
