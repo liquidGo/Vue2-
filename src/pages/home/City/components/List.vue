@@ -17,17 +17,12 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-            <div class="area" v-for="(item, key) in cities" :key="item.id" :ref="key">
-                <div class="title">{{  key  }}</div>
-                <div class="item-list" v-for="value in cities[key]" :key="value.id">
-                    <div v-on:click="itemFn(value)" class="item">{{  value.name  }}</div>
-=======
+
             <div class="area" :ref="key" v-for="(item, key) in cities" :key="item.id">
                 <div class="title">{{ key }}</div>
                 <div class="item-list" v-for="value in cities[key]" :key="value.id">
                     <div v-on:click="itemFn(value)" class="item">{{ value.name }}</div>
->>>>>>> city-search-logic
+
                 </div>
             </div>
         </div>
@@ -47,13 +42,12 @@ export default {
         setTimeout(() => {
             this.scroll = new Bscroll(this.$refs.wrapper)
         }, 20);
-<<<<<<< HEAD
-=======
+
         console.log(this.$refs, 'ttt');
         this.$nextTick(() => {
             console.log(this.cities, '11');
         })
->>>>>>> city-search-logic
+
     },
     watch: {
         letter() {
