@@ -1,7 +1,6 @@
 <template>
     <div>
         <header-city></header-city>
-
         <search-vue :cities="cities"></search-vue>
         <list-city :hotCitys="hotCitys" :letter="letter" :cities="cities"></list-city>
         <abc-de @change="handleLetterChange" :cities="cities"></abc-de>
@@ -25,7 +24,6 @@ export default {
             letter: '',
             cities: {},
             hotCitys: [],
-            letter: ''
         }
     },
     methods: {

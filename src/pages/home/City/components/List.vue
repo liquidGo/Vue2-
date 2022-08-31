@@ -67,16 +67,8 @@ export default {
             console.log('cli', value);
             this.city = value.name
         }
-    },
-    watch: {
-        letter() {
-            if (this.letter) {
-                const element = this.$refs[this.letter]
-                this.scroll.scrollToElement(element[0])
-                // console.log(element);
-            }
-        }
     }
+   
 }
 </script>
 
