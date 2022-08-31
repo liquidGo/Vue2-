@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header-vue :city="city"></header-vue>
+        <header-vue ></header-vue>
         <swiper-vue :swiperList="swiperList"></swiper-vue>
         <icons-vue :iconList="iconList"></icons-vue>
         <recommend-vue v-bind:rex="reX"></recommend-vue>

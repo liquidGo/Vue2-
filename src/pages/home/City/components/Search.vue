@@ -5,8 +5,12 @@
         </div>
         <div class="search-content" v-show="keyword" ref="searchWrapper">
             <ul>
-                <li  class="search-item" v-for="item of list" :key="item.id">{{ item.name }}</li>
-                <li v-show="hasNoData" class="search-item">没有找到匹配数据</li>
+                <!-- <router-link to="/"> -->
+                    <li v-on:click="itemFn(item)" class="search-item" v-for="item of list" :key="item.id">{{ item.name
+                    }}
+                    </li>
+                    <li v-show="hasNoData" class="search-item">没有找到匹配数据</li>
+                <!-- </router-link> -->
             </ul>
         </div>
     </div>
@@ -17,9 +21,7 @@
 import BScroll from 'better-scroll';
 export default {
     name: 'CitySearch',
-    methods: {
 
-    },
     props: {
         cities: Object
     },
@@ -56,14 +58,23 @@ export default {
         //     console.log(this.list,'list');
         // }
     },
-    computed:{
-        hasNoData(){
+    computed: {
+        hasNoData() {
             return !this.list.length
         }
     },
     mounted() {
         console.log(this.$refs.searchWrapper);
         this.scroll = new BScroll(this.$refs.searchWrapper)
+    },
+    methods: {
+        itemFn(value) {
+            // console.log(value, 'value');
+            // this.$store.state.city = value.name
+            this.$store.dispatch('changeCity', value.name)
+            this.$router.push('/')
+        }
+
     }
 }
 </script>

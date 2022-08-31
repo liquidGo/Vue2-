@@ -5,7 +5,11 @@
                 <div class="title border-topbottom">当前城市</div>
                 <div class="button-list">
                     <div class="button-wrapper">
-                        <div class="button">{{ this.city }}</div>
+                        <!-- <div class="button">{{ this.$store.state.city }}</div> -->
+
+
+
+                        <div class="button">{{ this.$store.getters.cityFn }}</div>
                     </div>
                 </div>
             </div>
@@ -13,7 +17,7 @@
                 <div class="title">热门城市</div>
                 <div class="button-list">
                     <div class="button-wrapper" v-for="item of hotCitys" :key="item.id">
-                        <div class="button">{{ item.name }}</div>
+                        <div v-on:click="itemFn(item)" class="button">{{ item.name }}</div>
                     </div>
                 </div>
             </div>
@@ -21,8 +25,7 @@
             <div class="area" :ref="key" v-for="(item, key) in cities" :key="item.id">
                 <div class="title">{{ key }}</div>
                 <div class="item-list" v-for="value in cities[key]" :key="value.id">
-                    <div v-on:click="itemFn(value)" class="item">{{ value.name }}</div>
-
+                    <div @click="itemFn(value)" class="item">{{ value.name }}</div>
                 </div>
             </div>
         </div>
@@ -31,6 +34,7 @@
 
 <script>
 import Bscroll from 'better-scroll'
+import { mapActions } from 'Vuex';
 export default {
     name: 'CityList',
     props: {
@@ -42,11 +46,10 @@ export default {
         setTimeout(() => {
             this.scroll = new Bscroll(this.$refs.wrapper)
         }, 20);
-
-        console.log(this.$refs, 'ttt');
-        this.$nextTick(() => {
-            console.log(this.cities, '11');
-        })
+        // console.log(this.$refs, 'ttt');
+        // this.$nextTick(() => {
+        //     console.log(this.cities, '11');
+        // })
 
     },
     watch: {
@@ -54,7 +57,7 @@ export default {
             if (this.letter) {
                 const element = this.$refs[this.letter][0]
                 this.scroll.scrollToElement(element)
-                console.log(element,'element');
+                console.log(element, 'element');
             }
         }
     },
@@ -65,9 +68,13 @@ export default {
     },
     methods: {
         itemFn(value) {
-            console.log('cli', value);
-            this.city = value.name
-        }
+            // console.log(value, 'value');
+            // this.$store.state.city = value.name
+            // this.$store.dispatch('changeCity', value.name)
+            this.changeCity(value.name)
+            this.$router.push('/')
+        },
+        ...mapActions(['changeCity'])
 
     }
 
