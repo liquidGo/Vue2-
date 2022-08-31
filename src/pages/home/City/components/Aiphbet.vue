@@ -1,11 +1,15 @@
 <template>
     <div>
         <ul class="list">
-            <li v-for="(value, key) in cities" :key="key" class="item">{{  key  }}</li>
-            <!-- <li class="item">B</li>
-            <li class="item">C</li>
-            <li class="item">D</li>
-            <li class="item">E</li> -->
+            <li 
+            @touchstart="handleTouchStart" 
+            @touchmove="handleTouchMove" 
+            @touchend="handleTouchEnd"
+            v-for="(value) in letters" 
+            :key="value" 
+            class="item" 
+            :ref="value"
+            @click="handleLetterClick">{{  value  }}</li>
         </ul>
     </div>
 
@@ -16,13 +20,57 @@ export default {
     name: 'AiphbetCity',
     data() {
         return {
+            touchStatus: false,
+            startY: 0,
+            timer: null
         }
+    },
+    computed:{
+        letters(){
+            const letters = [];
+            for (let i in this.cities){
+                letters.push(i);
+            }
+            return letters
+        }
+    },
+    watch:{
+
     },
     props: {
         cities: Object
     },
     mounted() {
-        console.log(this.cities, 'aaaaaaa');
+        console.log(this.letters, 'aaaaaaa');
+    },
+    updated(){
+        this.startY= this.$refs['A'][0].offsetTop
+    },
+    methods: {
+        handleLetterClick(letter) {
+            console.log(letter.target.innerText,'letter');
+            this.$emit('change', letter.target.innerText)
+        },
+        handleTouchStart() {
+            this.touchStatus = true;
+        },
+        handleTouchMove(e){
+            if(this.touchStatus){
+                if (this.timer){
+                    clearTimeout(this.timer)
+                }
+                this.timer = setTimeout(() => {
+                    const touchY = e.touches[0].clientY - 79
+                    const index = Math.floor((touchY-this.startY)/20)
+                    if(index >= 0 && index < this.letters.length){
+                        this.$emit('change',this.letters[index]);
+                    }
+                }, 20);
+            }
+        },
+        handleTouchEnd() {
+            this.touchStatus = false;
+        }
     }
 }
 </script>
