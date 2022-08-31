@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header-vue ></header-vue>
+        <header-vue></header-vue>
         <swiper-vue :swiperList="swiperList"></swiper-vue>
         <icons-vue :iconList="iconList"></icons-vue>
         <recommend-vue v-bind:rex="reX"></recommend-vue>
@@ -18,6 +18,7 @@ import RecommendVue from './components/Recommend.vue';
 import CityVue from './components/City.vue';
 import WeekendVue from './components/Weekend.vue';
 import axios from 'axios'
+// import { mapState } from 'Vuex';
 export default {
     name: 'Home',
     components: {
@@ -30,7 +31,8 @@ export default {
     },
     data() {
         return {
-            city: '',
+            lastCity: '',
+            city:'',
             reX: '热销推荐',
             whereGoWeekend: '周末去哪？',
             iconList: [],
@@ -39,12 +41,24 @@ export default {
             weekendList: []
         }
     },
+
+    // computed: {
+    //     ...mapState(['city'])
+    // },
     mounted() {
-        this.getHomeInfo()
+        // console.log(this.city,'aaaa');
+        this.lastCity = this.city
+        this.getHomeInfo();
+    },
+    activated() {
+        if (this.lastCity !== this.city) {
+            this.lastCity = this.city
+            this.getHomeInfo()
+        }
     },
     methods: {
         getHomeInfo() {
-            axios.get('/mock/index.json')
+            axios.get('/mock/index.json?city=' + this.city)
                 .then(res => {
                     console.log(res, 'resss');
                     let data = res.data

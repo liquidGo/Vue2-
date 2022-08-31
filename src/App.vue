@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
@@ -15,5 +17,7 @@ export default {
 </script>
 
 <style lang="less">
-  * { touch-action: pan-y; } 
+* {
+  touch-action: pan-y;
+}
 </style>
