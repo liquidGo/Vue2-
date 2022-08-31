@@ -68,12 +68,9 @@ export default {
             console.log('cli', value);
             this.city = value.name
         }
-<<<<<<< HEAD
+
     }
-   
-=======
-    },
->>>>>>> city-search-logic
+
 }
 </script>
 
