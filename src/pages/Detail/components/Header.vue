@@ -3,13 +3,12 @@
         <router-link tag="div" to="/" class="header-abs" v-show="showAbs">
             <span class="iconfont back-icon">&#xe624;</span>
         </router-link>
-        <div class="header-fixed" v-show="!showAbs" >
+        <div class="header-fixed" v-show="!showAbs">
             <router-link to="/">
                 <span class="iconfont header-fixed-back">&#xe624;</span>
             </router-link>
             景点详情
         </div>
-        DetailHeader
     </div>
 </template>
 
@@ -19,14 +18,14 @@ export default {
     data() {
         return {
             showAbs: true
-          
+
         }
     },
     methods: {
         handleScroll() {
             const top = document.documentElement.scrollTop
             if (top > 60) {
-               
+
                 this.showAbs = false;
             } else {
                 this.showAbs = true;
@@ -57,6 +56,7 @@ export default {
             color #fff
             font-size .4rem
     .header-fixed
+        z-index 9
         position fixed
         top 0
         left 0
