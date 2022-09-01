@@ -6,9 +6,6 @@
                 <div class="button-list">
                     <div class="button-wrapper">
                         <!-- <div class="button">{{ this.$store.state.city }}</div> -->
-
-
-
                         <div class="button">{{ this.$store.getters.cityFn }}</div>
                     </div>
                 </div>

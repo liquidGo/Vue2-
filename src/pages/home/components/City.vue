@@ -1,7 +1,12 @@
 <template>
     <div>
-        <ul class="citys" v-for="item of recommendList" :key="item.id">
-            <li class="item border-bottom">
+        <ul class="citys">
+            <router-link
+            tag="li"
+            class="item border-bottom"
+            v-for="item of recommendList"
+            :key="item.id"
+            :to="'/detail/'+item.id">
                 <img :src="item.imgSrc"
                     class="item-img" alt="">
                 <div class="item-info">
@@ -9,7 +14,8 @@
                     <p class="item-desc">{{item.desc}}</p>
                     <button class="item-button">查看详情</button>
                 </div>
-            </li>
+        </router-link>
+
         </ul>
     </div>
 </template>

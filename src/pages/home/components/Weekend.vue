@@ -3,15 +3,13 @@
         <ul class="weekend-box" v-for="item of weekendList" :key="item.id">
             <li>
                 <div class="weekend-li">
-                    <img class="weekend-li-img"
-                        :src="item.imgSrc"
-                        alt="">
+                    <img class="weekend-li-img" :src="item.imgSrc">
                 </div>
                 <div class="weekend-title">
-                    {{item.title}}
+                    {{ item.title }}
                 </div>
                 <div class="weekend-desc">
-                    {{item.desc}}
+                    {{ item.desc }}
                 </div>
 
             </li>
@@ -22,8 +20,8 @@
 <script>
 export default {
     name: 'Weekend',
-    props:{
-        weekendList:Array
+    props: {
+        weekendList: Array
     },
     data() {
         return {
